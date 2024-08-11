@@ -1,0 +1,37 @@
+//desctructurar el objeto
+
+@each $name, $fs, $lh, $fw in $display {
+    .display-#{$name}{
+        font-size: $fs;
+        line-height: $lh;
+        font-weight: $fw;
+    }
+}
+
+@each $name, $fs, $lh, $fw in $heading {
+    .heading-#{$name}{
+        font-size: $fs;
+        line-height: $lh;
+        font-weight: $fw;
+    }
+}
+
+@each $name, $fs, $lh, $fw in $body {
+    .body-#{$name} {
+        font-size: $fs;
+        line-height: $lh;
+        font-weight: $fw;
+    }
+}
+
+@each $name, $color in $color-text {
+    .text-#{$name} {
+        color: $color;
+    }
+}
+
+@each $name, $value in $font-weight {
+    .font-#{$name} {
+        font-weight: $value;
+    }
+}

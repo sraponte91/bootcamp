@@ -1,0 +1,59 @@
+@import "../mixin/btn-size";
+
+.btn {
+    display: inline-block;
+    font-weight: 400;
+    text-align: center;
+    text-decoration: none;
+    white-space: null;
+    vertical-align: middle;
+    user-select: none;
+    border: 2px solid transparent;
+    @include btn-size ($btn-py, $btn-px, $btn-fs, $btn-lh, $btn-br);
+    &:focus, &.focus {
+        outline: 0;
+    }
+}
+//Color Variants
+@each $name, $color in $theme-colors {
+    .btn-#{$name}{
+        @if $color == $warning {
+            color: $black;
+            background: $color;
+            border: 2px solid $color;
+        } @else if $color == $white {
+            color: $primary;
+            background: $color;
+            border: 2px solid $color;
+        }
+        @else {
+            color: $white;
+            background: $color;
+            border: 2px solid $color;
+        } 
+    }
+    .btn-#{$name}-o {
+        @if $color == $white{
+            color: $black;
+            background: transparent;
+            border: 2px solid $color;
+        } @else if $color == $warning{
+            color: $black;
+            background: transparent;
+            border: 2px solid $color;
+        } @else {
+            color: $color;
+            background: transparent;
+            border: 2px solid $color;
+        }
+    }
+}
+
+.btn-sm {
+    @include btn-size ($btn-sm-py, $btn-sm-px, $btn-sm-fs, $btn-sm-lh,  $btn-sm-br);
+}
+
+.btn-lg {
+    @include btn-size ($btn-lg-py, $btn-lg-px, $btn-lg-fs, $btn-lg-lh, $btn-lg-br);
+}
+

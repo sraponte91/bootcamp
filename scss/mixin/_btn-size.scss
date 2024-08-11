@@ -1,0 +1,14 @@
+//The parenthesis is the builder and I'll send some parameter through this to create the function
+//py:padding in axis y
+//px:padding in axis x
+//fs:font size
+//lh:line height
+//br:border radious
+@mixin btn-size ($py, $px, $fs, $lh, $br) {
+    padding: $py $px;
+    font-size: $fs;
+    line-height: $lh;
+    border-radius: $br;
+}
+
+//map of values

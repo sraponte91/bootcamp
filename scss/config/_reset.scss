@@ -1,0 +1,122 @@
+@import "font";
+@import "colors";
+
+:root {
+    --type-primary: #{$font-primary};
+    --color-primary: #{$grey-900};
+    --color-secondary: #{$white}; 
+}
+
+//dark or light mode
+@media (prefers-color-scheme:dark) {
+    :root {
+        --color-primary: #{$grey-900};
+        --color-secondary: #{$grey-100};
+    }
+}
+
+@media (prefers-color-scheme:high) {
+    :root {
+        --color-primary: #{$black};
+        --color-secondary: #{$white};
+    }
+}
+
+
+// this one is used to clean the global css from the browser style
+* {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    box-sizing: border-box;
+    vertical-align: baseline;
+}
+
+//To avoid the problems with the images
+img, picture, video, iframe, figure {
+    max-width: 100%;
+    width: 100%;
+    display: block;
+    //optional
+    object-fit: cover;
+    object-position: center center;
+}
+
+// To reset all the a tags
+a {
+    display: block;
+}
+
+//for tag a inside a p
+
+p a {
+    display: inline; //This makes that the tag doesn't take the 100% of the father div on the inline tags doesn't work top or bottom margins 
+}
+
+// To reset the li
+li {
+    list-style-type: none;
+}
+
+// This set is for the soft anchord
+
+html {
+    scroll-behavior: smooth;
+}
+
+// To give orders to the main text tags
+h1, h2, h3, h4, h5, h6, p, span, a, strong, blockquote, i, b, u, em {
+    font-size: 1em;
+    font-weight: inherit;
+    font-size: inherit;
+    text-decoration: none;
+    color: inherit;
+} // every style of the text will come from my styles not from browser styles
+
+// To avoid issues with pseudoelements
+blockquote::before, blockquote::after, q::before, q::after{
+    content: "";
+    content: none;
+}
+
+//Typography issues and form position
+form, input, textarea, select, button, label{
+    font-family: inherit;
+    font-size: inherit;
+    hyphens: auto;
+    background-color: transparent;
+    display: block;
+    color: inherit;
+    //optional
+    appearance: none;
+}
+
+//To reset the tables:
+table, tr, td{
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+
+//Avoid svg problems
+svg { 
+    width: 100%;
+    display: block;
+    fill: currentColor;
+}
+
+//Type for the body:
+
+body{
+    min-height: 100vh;
+    font-size: 100%;
+    font-family: var(--type-primary);
+    color: var(--color-primary);
+    background-color: var(--color-secondary);
+    //optional
+    line-height: 1.4em;
+    hyphens: auto;
+    font-smooth: always;
+    -webkit-font-smoothing: antianliased;
+    -moz-osx-font-smoothing: greyscale;
+
+}
